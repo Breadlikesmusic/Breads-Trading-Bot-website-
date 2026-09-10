@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breads Trade Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #14110e;
+            color: #c9c0b0;
+            font-family: "Lora", Georgia, serif;
+            font-size: 17px;
+            line-height: 1.75;
+            padding: 60px 24px;
+        }
+
+        .page {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: #c9a227;
+            text-decoration: underline;
+            text-decoration-color: rgba(201, 162, 39, 0.3);
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            text-decoration-color: #c9a227;
+        }
+
+        h1 {
+            font-family: "Lora", serif;
+            font-size: 1.9rem;
+            color: #ece5d8;
+            font-weight: 500;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-family: "Lora", serif;
+            font-size: 1.15rem;
+            color: #ece5d8;
+            font-weight: 500;
+            margin-top: 48px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: #a89e8e;
+        }
+
+        .date {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.8rem;
+            color: #6b6355;
+            margin-bottom: 40px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px dashed #2e2820;
+            margin: 40px 0;
+        }
+
+        code {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.85em;
+            background: #1e1a15;
+            color: #d4a852;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        ul {
+            margin-bottom: 18px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #a89e8e;
+        }
+
+        .invite {
+            display: inline-block;
+            margin: 24px 0 8px 0;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.85rem;
+            background: #1e1a15;
+            border: 1px solid #2e2820;
+            padding: 10px 18px;
+            border-radius: 4px;
+            color: #d4a852;
+            text-decoration: none;
+        }
+
+        .invite:hover {
+            border-color: #c9a227;
+            text-decoration: none;
+        }
+
+        .screenshot {
+            background: #313338;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 24px 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .ss-top {
+            background: #2b2d31;
+            padding: 10px 14px;
+            color: #949ba4;
+            font-size: 13px;
+            border-bottom: 1px solid #1e1f22;
+        }
+
+        .ss-body {
+            padding: 16px;
+        }
+
+        .ss-msg {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .ss-msg:last-child {
+            margin-bottom: 0;
+        }
+
+        .ss-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #c9a227;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #14110e;
+            font-size: 15px;
+        }
+
+        .ss-name {
+            color: #f2f3f5;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .ss-bot {
+            background: #5865F2;
+            color: white;
+            font-size: 10px;
+            padding: 1px 4px;
+            border-radius: 3px;
+            margin-left: 5px;
+            vertical-align: middle;
+            font-weight: 500;
+        }
+
+        .ss-text {
+            color: #dbdee1;
+            font-size: 15px;
+            margin-top: 2px;
+            white-space: pre-wrap;
+        }
+
+        .ss-embed {
+            border-left: 4px solid #c9a227;
+            background: #2b2d31;
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin-top: 8px;
+            max-width: 420px;
+        }
+
+        .ss-embed-title {
+            color: #f2f3f5;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .ss-embed-desc {
+            color: #b5bac1;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #6b6355;
+            font-style: italic;
+            margin-top: 48px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <h1>Breads Trade Bot</h1>
+    <div class="date">Last updated sometime in 2026</div>
+
+    <p>
+        A project i made when i was bored for everyone to use. Odds are it wont be used at all but hey its worth a shot.
+    </p>
+
+    <p>
+        You can list an item, look for an item and vouch. Basically anything u would need from a trading system.
+    </p>
+
+    <a class="invite" href="https://discord.com/oauth2/authorize?client_id=1547629689127051295&permissions=2147568640&integration_type=0&scope=bot+applications.commands" target="_blank">→ add it to your server</a>
+
+    <hr>
+
+    <h2>What it looks like</h2>
+
+    <p>Searching for something is just one command:</p>
+
+    <div class="screenshot">
+        <div class="ss-top"># trading</div>
+        <div class="ss-body">
+            <div class="ss-msg">
+                <div class="ss-avatar">B</div>
+                <div>
+                    <div class="ss-name">Breads Trade Bot <span class="ss-bot">BOT</span></div>
+                    <div class="ss-text">Trade Results: 'Frost Hero Blade'
+Found 2 listing(s). Showing up to 10.
+
+Frost Hero Blade — 15k
+Seller: X
+Server: Y
+Description: MLF Notes willing to take relics
+Listing ID: #42
+
+Frost Hero Blade — 2 moonseyes
+Seller: X
+Server: Y
+Description: MLF relics down to negotiate
+Listing ID: #57</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p>
+        You see the price, who's selling, which server they're in, and their listing ID. Click on their name, add them, DM them, do the trade. Idrc
+    </p>
+
+    <p>
+        You can vouch after a trade is done. You can report scammers in my discord. If you have proof ill ban them personally.
+    </p>
+
+    <hr>
+
+    <h2>The commands</h2>
+
+    <ul>
+        <li><code>/trade list</code> — put something up for sale. The bot checks it against the Deepwoken Wiki first so you can't list fake items.</li>
+        <li><code>/trade find</code> — search for an item across every server the bot is in.</li>
+        <li><code>/trade profile</code> — check someone's vouch count and what they're selling.</li>
+        <li><code>/trade mylistings</code> — see your own active listings.</li>
+        <li><code>/trade remove</code> — take a listing down once you've sold it.</li>
+        <li><code>/trade complete</code> — vouch for someone after a trade.</li>
+        <li><code>/trade help</code> — see all this in Discord, in case you forget.</li>
+    </ul>
+
+    <hr>
+
+    <h2>About RMT</h2>
+
+    <p>
+        Irl trading isnt allowed dont even try. If i find ur listing im taking it down.
+    </p>
+
+    <hr>
+
+    <h2>Bugs / suggestions</h2>
+
+    <p>
+        Dm me on discord if u have any ideas or just wanna talk. My user is breadbastard. I reply relatively fast.
+    </p>
+
+    <p>
+        Im gonna make a discord eventually and it will be here: <a href="blank">click here</a>.
+    </p>
+
+    <p class="note">
+        Not affiliated with Deepwoken or Roblox. Obviously.
+    </p>
+
+</div>
+
+</body>
+</html>
